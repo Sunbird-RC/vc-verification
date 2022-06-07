@@ -1,0 +1,1 @@
+{"version":3,"file":"config.service.d.ts","sourceRoot":"/home/dell/Documents/SDk/VC-Verify-Library/Vc-Verify/projects/verify-module/src/","sources":["lib/code/services/config/config.service.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,oBAAoB,EAAE,MAAM,gCAAgC,CAAC;;AAEtE,qBAGa,aAAa;IAEL,oBAAoB,EAAE,oBAAoB;gBAA1C,oBAAoB,EAAE,oBAAoB;IAE7D,YAAY;iCAJD,aAAa;qCAAb,aAAa;CASzB"}

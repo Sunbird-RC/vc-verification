@@ -1,0 +1,1 @@
+{"version":3,"file":"verify-module.module.d.ts","sourceRoot":"/home/dell/Documents/SDk/VC-Verify-Library/Vc-Verify/projects/verify-module/src/","sources":["lib/verify-module.module.ts"],"names":[],"mappings":"AAAA,OAAO,EAAY,mBAAmB,EAAE,MAAM,eAAe,CAAC;;;;AAM9D,qBAWa,YAAY;WACT,QAAQ,CAAC,MAAM,EAAE,GAAG,GAAG,mBAAmB,CAAC,YAAY,CAAC;0CAD3D,YAAY;kCAAZ,YAAY;CAavB"}
