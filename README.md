@@ -9,7 +9,7 @@ To use this module you need to follow a few steps.
 1. Install *vc-verification* npm package in your angular project. Using below command
 
 
-|npm i vc-verification|
+|`npm i vc-verification`|
 | :- |
 
 1. You need to install the @zxing/ngx-scanner npm module. Before install this npm module you need to check your angular compatible version with this package version. You can check the details below too.
@@ -17,7 +17,7 @@ To use this module you need to follow a few steps.
 Run cmd - 
 
 
-|npm i @zxing/ngx-scanner@vx.x.x|
+|`npm i @zxing/ngx-scanner@vx.x.x`|
 | :- |
 
 
@@ -46,22 +46,24 @@ i)  Anyone can use the Default Scan template using sb-vc-verify selector or he/s
 
 Add below code in your ***app.component.html*** file
 
-|<sb-vc-verification></sb-vc-verification>|
+
+|`<sb-vc-verification> </sb-vc-verification>`|
 | :- |
 
 ii)  If anyone wants to change labels and messages from template. You can pass it through **item** property.
 
 app.component.html
 
-|<sb-vc-verification [item]="itemData"></sb-vc-verification>|
+|`<sb-vc-verification [item]="itemData"></sb-vc-verification>`|
 | :- |
 
 
 *App.component.ts :* Change the value of key
 
 
-|<p>this.itemData = </p><p>{</p><p>`       `"scanNote”:”To verify any eLocker document, simply scan the QR code that's on the document.”,</p><p>`       `"verify\_certificate": 'Verify Certificate',</p><p>`       `"scan\_qrcode": 'Scan QR Code',</p><p>`       `"detecting\_qrcode": 'Detecting QR code',</p><p>`       `"back": 'Back',</p><p>`       `"certificate\_isverified": 'Certificate is verified',</p><p>`       `"verify\_another\_Certificate": 'Verify another Certificate',</p><p>`       `"cetificate\_not\_valid": 'This Certificate is not valid',</p><p>`       `“scan\_qrcode\_again” : ‘Please scan QR code again’</p><p>`     `}</p><p></p><p>`   `});</p><p></p>|
+|<p>this.itemData = </p><p>{</p><p>"scanNote”:”To verify any eLocker document, simply scan the QR code that's on the document.”,</p><p>"verify\_certificate": 'Verify Certificate',</p><p>"scan\_qrcode": 'Scan QR Code',</p><p>"detecting\_qrcode": 'Detecting QR code',</p><p>"back": 'Back',</p><p>"certificate\_isverified": 'Certificate is verified',</p><p>"verify\_another\_Certificate": 'Verify another Certificate',</p><p>"cetificate\_not\_valid": 'This Certificate is not valid',</p><p>“scan\_qrcode\_again” : ‘Please scan QR code again’</p><p>}</p><p></p><p>});</p><p></p>|
 | :- |
+
 
 
 iii) If anyone wants to use their own he/she can implement their own UI and  he/she can use service methods of vc-verification library. 
@@ -72,7 +74,7 @@ iii) If anyone wants to use their own he/she can implement their own UI and  he/
 Import service file in your component where you want to call vc-verification library service method call.
 
 
-|<p></p><p>import { Component } from '@angular/core';</p><p>import { VerifyService } from 'verify-module'; </p><p></p><p>@Component({</p><p>`  `selector: 'app-root',</p><p>`  `templateUrl: './app.component.html',</p><p>`  `styleUrls: ['./app.component.scss']</p><p>})</p><p>export class AppComponent {</p><p> </p><p>`  `constructor(public verifyService: VerifyService) {</p><p></p><p>`    `this.verifyService.scanSuccessHandler(event).then((res) => {</p><p>`      `console.log(res);</p><p>`    `})</p><p>`  `}</p><p></p><p>}</p><p></p><p></p>|
+|<p></p><p>import { Component } from '@angular/core';</p><p>import { VerifyService } from 'verify-module'; </p><p></p><p>@Component({</p><p>selector: 'app-root',</p><p>templateUrl: './app.component.html',</p><p>styleUrls: ['./app.component.scss']</p><p>})</p><p>export class AppComponent {</p><p> </p><p>constructor(public verifyService: VerifyService) {</p><p></p><p>this.verifyService.scanSuccessHandler(event).then((res) => {</p><p>console.log(res);</p><p>})</p><p>}</p><p></p><p>}</p><p></p><p></p>|
 | :- |
 
 
@@ -84,4 +86,3 @@ List of service methods
 | :- | :- | :- |
 |enableScanner()|-|To Hide/show scanner screen|
 |scanSuccessHandler($event: any)|$event|This method used to verify scan data|
-
