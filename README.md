@@ -1,16 +1,15 @@
 # **Sunbird VC Verification**
 
-The module is developed for scanning the QR(Quick Response) codes inside your
-
-Angular applications. This library are designed to be used in sunbird RC platforms 
+The module is developed for scanning the QR(Quick Response) codes inside your Angular applications. This library are designed to be used in sunbird RC platforms.
 
 To use this module you need to follow a few steps.
 
 1. Install *vc-verification* npm package in your angular project. Using below command
 
-
 |`npm i vc-verification`|
 | :- |
+
+
 
 1. You need to install the @zxing/ngx-scanner npm module. Before install this npm module you need to check your angular compatible version with this package version. You can check the details below too.
 
@@ -37,7 +36,7 @@ For more detail about compatible version you can check this doc - <https://www.n
 1. Import **vc-verification** and **@zxing/ngx-scanner** library in your **app.module.ts** file
 
 
-|<p>import { VerifyModule } from 'vc-verification';</p><p>import { ZXingScannerModule } from '@zxing/ngx-scanner';</p><p></p><p>import \* as configData from '../assets/config.json';  // Read config from .json file</p><p></p><p>Or</p><p>// Add configuration in app.module.ts file</p><p>const configData = {</p><p>baseUrl: "assets/api/event-detail.json",</p><p>}</p><p></p><p></p><p>@NgModule({</p><p>declarations: [</p><p>AppComponent</p><p>],</p><p>imports: [</p><p>.....</p><p>......</p><p>VerifyModule.forChild(configData),  < —</p><p>ZXingScannerModule, < —</p><p>.....</p><p>......</p><p>],</p><p>providers: [],</p><p>bootstrap: [AppComponent]</p><p>})</p><p></p><p>export class AppModule { }</p><p></p>|
+|<p>import { VerifyModule } from 'vc-verification';</p><p>import { ZXingScannerModule } from '@zxing/ngx-scanner';</p><p>import \* as configData from '../assets/config.json';  // Read config from .json file</p><p></p><p>Or</p><p>// Add configuration in app.module.ts file</p><p>const configData = {</p><p>baseUrl: "assets/api/event-detail.json",</p><p>}</p><p></p><p></p><p>@NgModule({</p><p>declarations: [</p><p>AppComponent</p><p>],</p><p>imports: [</p><p>.....</p><p>......</p><p>VerifyModule.forChild(configData),  < —</p><p>ZXingScannerModule, < —</p><p>.....</p><p>......</p><p>],</p><p>providers: [],</p><p>bootstrap: [AppComponent]</p><p>})</p><p></p><p>export class AppModule { }</p><p></p>|
 | :- |
 
 
@@ -46,9 +45,9 @@ i)  Anyone can use the Default Scan template using sb-vc-verify selector or he/s
 
 Add below code in your ***app.component.html*** file
 
-
 |`<sb-vc-verification> </sb-vc-verification>`|
 | :- |
+
 
 ii)  If anyone wants to change labels and messages from template. You can pass it through **item** property.
 
@@ -56,6 +55,7 @@ app.component.html
 
 |`<sb-vc-verification [item]="itemData"></sb-vc-verification>`|
 | :- |
+
 
 
 *App.component.ts :* Change the value of key
@@ -76,6 +76,7 @@ Import service file in your component where you want to call vc-verification lib
 
 |<p></p><p>import { Component } from '@angular/core';</p><p>import { VerifyService } from 'verify-module'; </p><p></p><p>@Component({</p><p>selector: 'app-root',</p><p>templateUrl: './app.component.html',</p><p>styleUrls: ['./app.component.scss']</p><p>})</p><p>export class AppComponent {</p><p> </p><p>constructor(public verifyService: VerifyService) {</p><p></p><p>this.verifyService.scanSuccessHandler(event).then((res) => {</p><p>console.log(res);</p><p>})</p><p>}</p><p></p><p>}</p><p></p><p></p>|
 | :- |
+
 
 
 List of service methods
