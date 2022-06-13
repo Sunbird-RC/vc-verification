@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { VerifyService } from '../../services/verify/verify.service';
 
 @Component({
-  selector: 'lib-scan-vc',
+  selector: 'sb-vc-verification',
   templateUrl: './scan-vc.component.html',
   styleUrls: ['./scan-vc.component.css']
 })

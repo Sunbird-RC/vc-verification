@@ -1,12 +1,25 @@
 {
   "name": "vc-verification",
   "version": "0.0.1",
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pratikshakhandagale/vc-verification.git"
+  },
+  "keywords": [
+    "vc-verification"
+  ],
+  "author": "Tekdi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pratikshakhandagale/vc-verification/issues"
+  },
+  "homepage": "https://github.com/Pratikshakhandagale/vc-verification#readme",
   "peerDependencies": {
     "@angular/common": "^10.2.4",
     "@angular/core": "^10.2.4"
   },
   "dependencies": {
-    "@zxing/ngx-scanner": "^3.1.3",
     "jszip": "^3.9.1",
     "tslib": "^2.0.0"
   }

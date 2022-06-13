@@ -1,3 +1,7 @@
+.vc-txtAlign
+{
+    text-align:-webkit-center
+}
 
 .vc-textStyle {  
     font-size: 14px;
@@ -114,7 +118,7 @@ h4{
     box-shadow: 0px 2px 5px rgb(0 0 0 / 5%);
     border-radius: 4px;
     height: auto;
-    margin: 20px 30px 0 30px;
+    margin: 20px 0 0 0;
     padding: 10px;
     border-radius: 4px;
     width: 315px;
@@ -148,6 +152,10 @@ td, th {
     z-index:10000000;
     opacity: 0.4;
     filter: alpha(opacity=40);
+}
+
+.vc-scanW{
+    width: 70%;
 }
 /* // ------------------------------------------------------ */
 

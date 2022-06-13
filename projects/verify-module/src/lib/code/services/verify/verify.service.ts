@@ -28,6 +28,7 @@ export class VerifyService {
 
   enableScanner() {
     this.success = false;
+    this.notValid  = false;
     this.scannerEnabled = !this.scannerEnabled;
   }
 
@@ -50,8 +51,8 @@ export class VerifyService {
         myHeaders.append("Cookie", "JSESSIONID=BEE076F2D0801811396549DCC158F429; OAuth_Token_Request_State=1ef52fae-6e1a-4395-af75-beb03e9f8bc3");
         var signedData = JSON.parse(contents)
         this.readData(signedData.credentialSubject);
-        var context = {signedData}
-      //  context['signedCredentials'] = signedData
+        var context = {}
+        context['signedCredentials'] = signedData
         var raw = JSON.stringify(context);
 
         var requestOptions: any = {
@@ -83,10 +84,14 @@ export class VerifyService {
 
           })
           .catch(error => {
+            this.scannerEnabled = false;
+            this.notValid = true;
             console.log('error', error);
             reject(error);
           });
       }).catch(err => {
+        this.scannerEnabled = false;
+        this.notValid = true;
         console.log('err', err);
         reject(err);
       }
