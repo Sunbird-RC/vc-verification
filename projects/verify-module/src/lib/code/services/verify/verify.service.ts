@@ -67,7 +67,7 @@ export class VerifyService {
           redirect: 'follow'
         };
 
-        fetch("https://demo-nha-donor-registry.xiv.in/registry/api/v1/verify", requestOptions)
+         fetch(this.configData.baseUrl + "/verify", requestOptions)
           .then(response => response.json())
           .then(result => {
             if (result.verified) {
