@@ -1,7 +1,6 @@
 {
   "name": "vc-verification",
-  "version": "0.0.1",
-  
+  "version": "0.0.4",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Pratikshakhandagale/vc-verification.git"
@@ -21,6 +20,10 @@
   },
   "dependencies": {
     "jszip": "^3.9.1",
+    "ngx-scanner-qrcode": "^1.2.3",
     "tslib": "^2.0.0"
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
   }
 }

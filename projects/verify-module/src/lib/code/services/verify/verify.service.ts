@@ -33,8 +33,13 @@ export class VerifyService {
   }
 
 
-  public scanSuccessHandler($event: any) {
+  public scanSuccessHandler($event: any, config = {}) {
     this.configData = this.configService.getConfigUrl();
+    $event = (typeof($event) == 'string') ? $event : $event[0];
+
+    if($event.hasOwnProperty('typeName') && $event.typeName == 'ZBAR_QRCODE'){
+      $event = $event.value
+    }
 
     return new Promise((resolve, reject) => {
 
@@ -50,7 +55,7 @@ export class VerifyService {
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Cookie", "JSESSIONID=BEE076F2D0801811396549DCC158F429; OAuth_Token_Request_State=1ef52fae-6e1a-4395-af75-beb03e9f8bc3");
         var signedData = JSON.parse(contents)
-        this.readData(signedData.credentialSubject);
+        this.readData(signedData.credentialSubject, config);
         var context = {}
         context['signedCredentials'] = signedData
         var raw = JSON.stringify(context);
@@ -62,7 +67,7 @@ export class VerifyService {
           redirect: 'follow'
         };
 
-        fetch(this.configData.baseUrl + "/verify", requestOptions)
+        fetch("https://demo-nha-donor-registry.xiv.in/registry/api/v1/verify", requestOptions)
           .then(response => response.json())
           .then(result => {
             if (result.verified) {
@@ -84,12 +89,14 @@ export class VerifyService {
 
           })
           .catch(error => {
+            this.loader = false;
             this.scannerEnabled = false;
             this.notValid = true;
             console.log('error', error);
             reject(error);
           });
       }).catch(err => {
+        this.loader = false;
         this.scannerEnabled = false;
         this.notValid = true;
         console.log('err', err);
@@ -99,9 +106,21 @@ export class VerifyService {
     });
   }
 
-  readData(res) {
-    this.item = [];
+  readData(res, config) {
+    this.items = [];
     var _self = this;
+
+    if(config && config.hasOwnProperty('showResult')){
+      for(let i = 0 ; i < config.showResult.length; i++){
+      var tempObject = {};
+      tempObject['title'] = config.showResult[i].title;
+      tempObject['value'] = this.getValue(res, config.showResult[i].path);
+      console.log(tempObject);
+
+      this.items.push(tempObject);
+      }
+
+    }else{
     Object.keys(res).forEach(function (key) {
       var tempObject = {};
 
@@ -115,8 +134,43 @@ export class VerifyService {
 
     });
   }
+  }
 
+  getValue(item, fieldsPath) {
+    var propertySplit = fieldsPath.split(".");
 
+    let fieldValue = [];
+
+    for (let j = 0; j < propertySplit.length; j++) {
+      let a = propertySplit[j];
+
+      if (j == 0 && item.hasOwnProperty(a)) {
+        fieldValue = item[a];
+      } else if (fieldValue.hasOwnProperty(a)) {
+
+        fieldValue = fieldValue[a];
+
+      } else if (fieldValue[0]) {
+        let arryItem = []
+        if (fieldValue.length > 0) {
+          for (let i = 0; i < fieldValue.length; i++) {
+          }
+
+          fieldValue = arryItem;
+
+        } else {
+          fieldValue = fieldValue[a];
+        }
+
+      } else {
+        fieldValue = [];
+      }
+    }
+
+    return fieldValue;
+  
+
+}
 
 
 }

@@ -83,7 +83,7 @@ h4{
 
 .vc-btnPrimary{
     bottom: 0;
-    background: #1987B6;
+    background: #D9552B;
     border-radius: 8px;
     height: 40px;
     width: auto;
@@ -91,6 +91,7 @@ h4{
     border-radius: 8px;
     border: 0;
     padding: 5px 20px;
+    margin: 0 4px;
 }
 
 .mt-50 {
@@ -110,7 +111,9 @@ h4{
     width: 300px;
     padding: 15px;
     border-radius: 4px;
-    border: #80808029 solid 1px
+    border: #80808029 solid 1px;
+    font-size: 14px;
+    width: 318px;
 }
 
 .vc-msg {
@@ -156,6 +159,10 @@ td, th {
 
 .vc-scanW{
     width: 70%;
+}
+
+.p24{
+    font-size: 24px;
 }
 /* // ------------------------------------------------------ */
 

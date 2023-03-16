@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import {  ScannerQRCodeConfig,
+  NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode';
 import { VerifyService } from '../../services/verify/verify.service';
 
 @Component({
@@ -7,37 +9,49 @@ import { VerifyService } from '../../services/verify/verify.service';
   styleUrls: ['./scan-vc.component.css']
 })
 export class ScanVcComponent implements OnInit {
-  @Input() item: any;
+   @Input() item: any;
+
+  //item = [];
+  @ViewChild('action') action: NgxScannerQrcodeComponent;
+  public config: ScannerQRCodeConfig = {
+    vibrate: 400,
+     isBeep: false,
+  }
+  constructor(public verifyService: VerifyService) {
+   // this.item['scanner_type'] = 'ZBAR_QRCODE'
+  }
+
+  ngOnInit(): void {
+  }
+
+  scanHandler($event: any) {
+    let self = this;
+    this.verifyService.scanSuccessHandler($event, this.item).then((res)=>{
+      setTimeout(() => {
+          this.action.stop();
+      }, 1000);
+    }, (err)=>{
+      setTimeout(() => {
+        this.action.stop();
+    }, 1000);
+    });
+  }
+
+  openScanner() {
+
+    if (this.item && this.item.hasOwnProperty('scanner_type') && this.item['scanner_type'] == 'ZBAR_QRCODE') {
+      setTimeout(() => {
+        if (this.action.isStart) {
+          this.action.stop();
+        } else {
+          this.action.start();
+        }
   
-
-
-   constructor(public verifyService : VerifyService) { 
-
-   }
- 
-   ngOnInit(): void {
-    /* { 
-      verify_certificate = 'Verify Certificate',
-     scan_qrcode = 'Scan QR Code'
-      detecting_qrcode = 'Detecting QR code'
-      back = 'Back'
-      certificate_isverified = 'Certificate is verified'
-      verify_another_Certificate = 'Verify another Certificate'
-      cetificate_not_valid = 'This Certificate is not valid'
-      }*/
-   }
- 
-   scanHandler($event: any) 
-   {
-     this.verifyService.scanSuccessHandler($event);
-   }
- 
-
-   openScanner() {
-    console.log(this.item);
-
+      }, 500);
+    }
     this.verifyService.enableScanner();
- 
-   }
+  }
+
+
 }
 
