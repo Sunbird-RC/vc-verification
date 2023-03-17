@@ -157,13 +157,24 @@ td, th {
     filter: alpha(opacity=40);
 }
 
-.vc-scanW{
-    width: 70%;
-}
-
 .p24{
     font-size: 24px;
 }
 /* // ------------------------------------------------------ */
+
+
+@media screen and (max-device-width:1000px),
+screen and (max-width:1400px) {
+    .vc-scanW{
+        width: 40%;
+    }
+}
+
+@media screen and (max-device-width:100px),
+screen and (max-width:1000px) {
+    .vc-scanW{
+        width: 70%;
+    }
+}
 
 

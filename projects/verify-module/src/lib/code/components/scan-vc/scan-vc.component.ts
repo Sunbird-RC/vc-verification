@@ -16,6 +16,7 @@ export class ScanVcComponent implements OnInit {
   public config: ScannerQRCodeConfig = {
     vibrate: 400,
      isBeep: false,
+     deviceActive :  1
   }
   constructor(public verifyService: VerifyService) {
    // this.item['scanner_type'] = 'ZBAR_QRCODE'
