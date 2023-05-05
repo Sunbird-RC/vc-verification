@@ -1,5 +1,6 @@
 # **Sunbird VC Verification**
 
+
 The module is developed for scanning the QR(Quick Response) codes inside your Angular applications. This library are designed to be used in sunbird RC platforms.
 
 To use this module you need to follow a few steps.
@@ -90,3 +91,5 @@ List of service methods
 | :- | :- | :- |
 |enableScanner()|-|To Hide/show scanner screen|
 |scanSuccessHandler($event: any)|$event|This method used to verify scan data|
+
+For latest document refer this doc - https://github.com/Sunbird-RC/community/blob/main/vc-verification-module.md
