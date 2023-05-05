@@ -92,4 +92,4 @@ List of service methods
 |enableScanner()|-|To Hide/show scanner screen|
 |scanSuccessHandler($event: any)|$event|This method used to verify scan data|
 
-For latest document refer this doc - https://github.com/Sunbird-RC/community/blob/main/vc-verification-module.md
+For latest info refer this doc - https://github.com/Sunbird-RC/community/blob/main/vc-verification-module.md
