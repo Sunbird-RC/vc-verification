@@ -11,7 +11,7 @@ To use this module you need to follow a few steps.
 
 
 
-1. You need to install the @zxing/ngx-scanner npm module. Before install this npm module you need to check your angular compatible version with this package version. You can check the details below too.
+2. You need to install the @zxing/ngx-scanner npm module. Before install this npm module you need to check your angular compatible version with this package version. You can check the details below too.
 
 Run cmd - 
 
@@ -30,10 +30,13 @@ Run cmd -
 
 For more detail about compatible version you can check this doc - <https://www.npmpeer.dev/packages/@zxing/ngx-scanner/compatibility>
 
+3. Add below CND link in index.html file
+```
+  <script src="https://cdn.jsdelivr.net/npm/@undecaf/zbar-wasm@0.9.12/dist/index.js"></script>
+  ```
 
 
-
-1. Import **vc-verification** and **@zxing/ngx-scanner** library in your **app.module.ts** file
+4. Import **vc-verification** and **@zxing/ngx-scanner** library in your **app.module.ts** file
 
 
 |<p>import { VerifyModule } from 'vc-verification';</p><p>import { ZXingScannerModule } from '@zxing/ngx-scanner';</p><p>import \* as configData from '../assets/config.json';  // Read config from .json file</p><p></p><p>Or</p><p>// Add configuration in app.module.ts file</p><p>const configData = {</p><p>baseUrl: "assets/api/event-detail.json",</p><p>}</p><p></p><p></p><p>@NgModule({</p><p>declarations: [</p><p>AppComponent</p><p>],</p><p>imports: [</p><p>.....</p><p>......</p><p>VerifyModule.forChild(configData),  < —</p><p>ZXingScannerModule, < —</p><p>.....</p><p>......</p><p>],</p><p>providers: [],</p><p>bootstrap: [AppComponent]</p><p>})</p><p></p><p>export class AppModule { }</p><p></p>|
