@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { VerifyModuleService } from './verify-module.service';
+import { VerifyLibraryService } from './verify-module.service';
 
 describe('VerifyModuleService', () => {
-  let service: VerifyModuleService;
+  let service: VerifyLibraryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(VerifyModuleService);
+    service = TestBed.inject(VerifyLibraryService);
   });
 
   it('should be created', () => {

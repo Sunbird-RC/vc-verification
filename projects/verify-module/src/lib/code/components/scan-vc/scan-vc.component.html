@@ -44,20 +44,14 @@
             <span class="p18" *ngIf="!item?.scan_qrcode">Scan QR Code</span>
 
             <br /><br />
-            <div *ngIf="item?.scanner_type == 'ZXING_QRCODE' || !item?.scanner_type">
+            <div *ngIf="item?.scanner_type == 'ZXING_QRCODE'">
                 <zxing-scanner #scanner (scanSuccess)="scanHandler($event)" class="vc-scanW">   </zxing-scanner>
             </div>
           
 
-            <div *ngIf="item?.scanner_type == 'ZBAR_QRCODE'">
+            <!-- <div *ngIf="item?.scanner_type == 'ZBAR_QRCODE'">
                 <ngx-scanner-qrcode class="vc-scanW" #action="scanner" [config]="config" (event)="scanHandler($event)"></ngx-scanner-qrcode>
-                <!-- <button  class="btn vc-btnPrimary mt-50" (click)="action.isStart ? action.stop() : action.start()"> <span class="vc-whiteColor p16">{{action.isStart ? 'Stop Scanning' : 'Start Scanning'}}</span></button> 
-                <button (click)="openScanner()" type="button"
-                class="btn vc-btnPrimary mt-50">
-                <span class="vc-whiteColor p16" (click)="action.stop()" *ngIf="item?.back">{{item?.back}}</span>
-                <span class="vc-whiteColor p16" (click)="action.stop()" *ngIf="!item?.back">Back</span>
-            </button> -->
-           </div>
+           </div> -->
          
 
             <div *ngIf="verifyService?.loader" class="d-flex justify-content-center">

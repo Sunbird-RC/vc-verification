@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {VerifyService } from '../../projects/verify-module/src/lib/code/services/verify/verify.service';
+import {VerifyService } from 'verify-module';
 
 @Component({
   selector: 'app-root',

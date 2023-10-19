@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { VerifyModule} from '../../projects/verify-module/src/lib/verify-module.module';
+import { VerifyModule} from 'verify-module';
 
 @NgModule({
   declarations: [

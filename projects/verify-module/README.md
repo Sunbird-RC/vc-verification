@@ -25,5 +25,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 Create package -
-1.  sudo ng build --prod
+1.  sudo ng build --prod  // for ng v16 >= : - ng build --configuration=production
 2.  npm run package

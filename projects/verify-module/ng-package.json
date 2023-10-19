@@ -4,5 +4,10 @@
   "lib": {
     "entryFile": "src/public-api.ts"
   },
-  "whitelistedNonPeerDependencies": ["."]
+  "allowedNonPeerDependencies" : [
+    "@zxing/browser",
+    "@zxing/library",
+    "@zxing/ngx-scanner",
+    "jszip"
+  ]
 }

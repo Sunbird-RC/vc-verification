@@ -16,7 +16,6 @@ export class VerifyModuleComponent implements OnInit {
 
   ngOnInit(): void {
 
-    alert('hi this Vc Verify Lib');
   }
 
 }

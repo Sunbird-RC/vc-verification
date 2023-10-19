@@ -1,9 +1,9 @@
 {
   "name": "vc-verification",
-  "version": "0.0.5",
+  "version": "0.0.15",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pratikshakhandagale/vc-verification.git"
+    "url": "git+https://github.com/Sunbird-RC/vc-verification.git"
   },
   "keywords": [
     "vc-verification"
@@ -11,19 +11,18 @@
   "author": "Tekdi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Pratikshakhandagale/vc-verification/issues"
+    "url": "https://github.com/Sunbird-RC/vc-verification/issues"
   },
-  "homepage": "https://github.com/Pratikshakhandagale/vc-verification#readme",
+  "homepage": "https://github.com/Sunbird/vc-verification#readme",
   "peerDependencies": {
-    "@angular/common": "^10.2.4",
-    "@angular/core": "^10.2.4"
+    "@angular/common": "16.2.8",
+    "@angular/core": "16.2.8",
+    "@zxing/browser": "^0.1.4",
+    "@zxing/library": "^0.20.0",
+    "@zxing/ngx-scanner": "^16.1.0",
+    "jszip": "^3.10.1"
   },
   "dependencies": {
-    "jszip": "^3.9.1",
-    "ngx-scanner-qrcode": "^1.2.3",
     "tslib": "^2.0.0"
-  },
-  "angularCompilerOptions": {
-    "enableIvy": false
   }
 }

@@ -37,9 +37,6 @@ export class VerifyService {
     this.configData = this.configService.getConfigUrl();
     $event = (typeof($event) == 'string') ? $event : $event[0];
 
-    if($event.hasOwnProperty('typeName') && $event.typeName == 'ZBAR_QRCODE'){
-      $event = $event.value
-    }
 
     return new Promise((resolve, reject) => {
 

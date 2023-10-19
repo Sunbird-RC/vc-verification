@@ -12,7 +12,7 @@ To use this module you need to follow a few steps.
 
 
 
-2. You need to install the **@zxing/ngx-scanner** npm module. Before install this npm module you need to check your angular compatible version with this package version. You can check the details below too.
+2. You need to install the @zxing/ngx-scanner npm module. Before install this npm module you need to check your angular compatible version with this package version. You can check the details below too.
 
 Run cmd - 
 
